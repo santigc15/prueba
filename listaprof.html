@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado</title>
+</head>
+
+<body>
+    <h1>Listado libros</h1>
+    <table>
+        <thead>
+            <th>Id</th>
+            <th>Título</th>
+            <th>Precio</th>
+        </thead>
+        <tbody id="datos_tabla">
+            
+        </tbody>
+    </table>
+    <script>
+        fetch("listar.php")
+        .then(datos=>datos.text())
+        .then(dat=>{
+            let tabla=document.getElementById("datos_tabla");
+            tabla.innerHTML=dat;
+          
+        })
+    </script>
+</body>
+
+</html>
